@@ -10,3 +10,9 @@
 (deftask build []
   (comp (cljs)
         (target)))
+
+(deftask dev []
+  (comp
+   (watch)
+   (cljs)
+   (target)))
