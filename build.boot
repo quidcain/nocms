@@ -19,6 +19,6 @@
 
 (deftask run []
   (comp
-   (serve)
    (watch)
-   (build)))
+   (build)
+   (serve)))
