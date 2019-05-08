@@ -9,9 +9,9 @@
  '[adzerk.boot-cljs :refer [cljs]]
  '[pandeiro.boot-http :refer [serve]])
 
-(deftask build-min []
-  (comp (cljs :optimizations :advanced)
-        (target)))
+(deftask min []
+  (task-options! cljs {:optimizations :advanced})
+  identity)
 
 (deftask build []
   (comp (cljs)
@@ -20,4 +20,5 @@
 (deftask run []
   (comp
    (serve)
-   (watch)))
+   (watch)
+   (build)))
