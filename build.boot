@@ -4,7 +4,9 @@
  :dependencies '[[org.clojure/clojurescript "1.10.520"]
                  [adzerk/boot-cljs "2.1.5" :scope "test"]
                  [pandeiro/boot-http "0.8.3" :scope "test"]
-                 [powerlaces/boot-figreload "0.5.14" :scope "test"]])
+                 [powerlaces/boot-figreload "0.5.14" :scope "test"]
+                 [reagent "0.8.1"]
+                 [cljs-http "0.1.46"]])
 
 (require
  '[adzerk.boot-cljs :refer [cljs]]
