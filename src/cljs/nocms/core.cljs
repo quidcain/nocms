@@ -22,11 +22,15 @@
   (let [items (r/atom nil)
         handle-response (fn [] (get-data #(reset! items %)))]
     (fn []
-      [:div.container
+      [:div.container {:class ["Mih(100px) Bgc(#e2d3c3) Bdrs(3px)"
+                               "Bdw(4px) Bds(s) Bdc(#f7d2aa)"
+                               "P(10px) D(f) Fld(c) Ai(c)"
+                               "shadow"]}
        [render-list @items]
-       [:input.get-data {:type :button
-                         :value "Get data"
-                         :on-click handle-response}]])))
+       [:input {:type :button
+                :value "Get data"
+                :class "D(b) Mt(a)"
+                :on-click handle-response}]])))
 
 (defn main []
   (r/render [pulling]
