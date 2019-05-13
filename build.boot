@@ -7,7 +7,8 @@
                  [powerlaces/boot-figreload "0.5.14" :scope "test"]
                  [reagent "0.8.1"]
                  [cljs-http "0.1.46"]
-                 [zaeny/boot-atomizer "0.1.1"]])
+                 [zaeny/boot-atomizer "0.1.1"]
+                 [cljsjs/material-ui "3.9.3-0"]])
 
 (require
  '[adzerk.boot-cljs :refer [cljs]]

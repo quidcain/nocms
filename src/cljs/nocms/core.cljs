@@ -1,7 +1,8 @@
 (ns nocms.core
   (:require [reagent.core :as r]
             [cljs-http.client :as http]
-            [cljs.core.async :refer [<!]])
+            [cljs.core.async :refer [<!]]
+            [cljsjs.material-ui])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 (defn get-data
@@ -32,6 +33,10 @@
                 :class "D(b) Mt(a)"
                 :on-click handle-response}]])))
 
+(def mui-button (r/adapt-react-class (.-Button js/MaterialUI)))
+
+
 (defn main []
-  (r/render [pulling]
+  (r/render [mui-button {:variant "contained"}
+             "Hello"]
             (js/document.getElementById "app")))
