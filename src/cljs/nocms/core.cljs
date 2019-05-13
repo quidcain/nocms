@@ -2,7 +2,7 @@
   (:require [reagent.core :as r]
             [cljs-http.client :as http]
             [cljs.core.async :refer [<!]]
-            [cljsjs.material-ui])
+            ["@material-ui/core" :as mui])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 (defn get-data
@@ -33,7 +33,7 @@
                 :class "D(b) Mt(a)"
                 :on-click handle-response}]])))
 
-(def mui-button (r/adapt-react-class (.-Button js/MaterialUI)))
+(def mui-button (r/adapt-react-class (.-Button mui)))
 
 
 (defn main []

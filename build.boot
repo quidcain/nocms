@@ -7,8 +7,7 @@
                  [powerlaces/boot-figreload "0.5.14" :scope "test"]
                  [reagent "0.8.1"]
                  [cljs-http "0.1.46"]
-                 [zaeny/boot-atomizer "0.1.1"]
-                 [cljsjs/material-ui "3.9.3-0"]])
+                 [zaeny/boot-atomizer "0.1.1"]])
 
 (require
  '[adzerk.boot-cljs :refer [cljs]]
@@ -24,7 +23,10 @@
   (comp
    (atomizer :find-class "src/cljs/nocms"
              :path-atomizer "./node_modules/atomizer/bin/atomizer")
-   (cljs)
+   (cljs :compiler-options {:install-deps true
+                            :npm-deps {"@material-ui/core" "3.9.3"
+                                       "react" "16.8.6"
+                                       "react-dom" "16.8.6"}})
    (target)))
 
 (deftask run []
